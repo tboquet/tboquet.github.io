@@ -35,3 +35,5 @@ DEFAULT_PAGINATION = 5
 
 THEME = "theme"
 BOOTSTRAP_THEME = "cosmo"
+SITELOGO = 'theme/images/ppclip2.png'
+DISPLAY_TAGS_ON_SIDEBAR = True
