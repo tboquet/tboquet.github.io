@@ -3,9 +3,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Thomas Boquet'
-SITENAME = u'McGython'
+SITENAME = u'MacGython'
 SITEURL = ''
-
 PATH = 'content'
 
 TIMEZONE = 'America/Montreal'
@@ -26,10 +25,13 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('Linkedin Profile', 'https://ca.linkedin.com/in/tboquet'),
+          ('Twitter Profile', '#'),)
 
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+THEME = "theme"
+BOOTSTRAP_THEME = "cosmo"
