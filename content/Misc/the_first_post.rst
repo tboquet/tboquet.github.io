@@ -4,7 +4,7 @@ Pelican + rST + Gihtub
 :date: 2015-08-03 10:28
 :category: Misc
 :tags: introduction, pelican, github
-
+:comments: enable
 
 
 .. image:: https://avatars0.githubusercontent.com/u/2043492?v=3&s=200
