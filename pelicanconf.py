@@ -31,7 +31,7 @@ SOCIAL = (('Linkedin Profile', 'https://ca.linkedin.com/in/tboquet'),
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+RELATIVE_URLS = False
 
 THEME = "theme"
 BOOTSTRAP_THEME = "cosmo"
@@ -43,5 +43,5 @@ SITELOGO_SIZE = 24
 BANNER = "images/bandcut2.jpg"
 BANNER_SUBTITLE = "Data Science & Machine Learning with paper clips"
 BANNER_ALL_PAGES = False
-ABOUT_ME = "Data Scientist at Gameloft, juggling with machine learning and statistical tools in Python and R to tackle business challenges."
+# ABOUT_ME = "Data Scientist at Gameloft, juggling with machine learning and statistical tools in Python and R to tackle business challenges."
 # AVATAR = "images/profile.jpg"
