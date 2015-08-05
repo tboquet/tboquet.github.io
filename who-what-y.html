@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Who What Y - MacGython</title>
+    <title>Who What Y - MacGRython</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
         <meta name="keywords" content="information,about,python,R" />
         <meta name="description" content="About these webpages" />
 
-        <meta property="og:site_name" content="MacGython" />
+        <meta property="og:site_name" content="MacGRython" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Who What Y"/>
         <meta property="og:url" content="/who-what-y.html"/>
@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
 
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="MacGython ATOM Feed"/>
+              title="MacGRython ATOM Feed"/>
 
 </head>
 <body>
@@ -53,7 +53,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="/" class="navbar-brand">
-<img src="/images/transwhite.png" width="24"/> MacGython            </a>
+<img src="/images/transwhite.png" width="24"/> MacGRython            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
@@ -114,23 +114,57 @@
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>Experiments on various subjects using <a class="reference external" href="http://www.python.org/">Python</a> and <a class="reference external" href="https://www.r-project.org/">R</a> with a MacGyver spirit. This blog is about <strong>data science</strong> and <strong>machine learning</strong> using hyper tuned paper clips.</p>
-<img alt="" src="images/bandcut.jpg" />
 
             </div>
             <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'macgython'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'who-what-y';
+                var disqus_url = '/who-what-y.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
         </article>
     </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-
+<div id="aboutme">
+    <p>
+        <strong>About Thomas Boquet</strong><br/>
+        Data Scientist at Gameloft, juggling with machine learning and statistical tools in Python and R to tackle business challenges.
+    </p>
+</div>
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
               <ul class="list-group" id="social">
                 <li class="list-group-item"><a href="https://ca.linkedin.com/in/tboquet"><i class="fa fa-linkedin-profile-square fa-lg"></i> Linkedin Profile</a></li>
-                <li class="list-group-item"><a href="#"><i class="fa fa-twitter-profile-square fa-lg"></i> Twitter Profile</a></li>
+                <li class="list-group-item"><a href="https://twitter.com/thomasboquet"><i class="fa fa-twitter-profile-square fa-lg"></i> Twitter Profile</a></li>
               </ul>
             </li>
 
@@ -151,11 +185,6 @@
         <li class="list-group-item">
             <a href="http://jinja.pocoo.org/" target="_blank">
                 Jinja2
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#" target="_blank">
-                You can modify those links in your config file
             </a>
         </li>
       </ul>
@@ -187,6 +216,21 @@
 <script src="/theme/js/respond.min.js"></script>
 
     <script src="/theme/js/bodypadding.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'macgython'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
     <!-- Google Analytics -->
     <script type="text/javascript">
 
