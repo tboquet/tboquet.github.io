@@ -31,9 +31,15 @@ SOCIAL = (('Linkedin Profile', 'https://ca.linkedin.com/in/tboquet'),
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 THEME = "theme"
 BOOTSTRAP_THEME = "cosmo"
-SITELOGO = 'theme/images/ppclip2.png'
-DISPLAY_TAGS_ON_SIDEBAR = True
+SITELOGO = "images/transwhite.png"
+DISPLAY_TAGS_ON_SIDEBAR = False
+STATIC_PATHS = ['images']
+SUMMARY_MAX_LENGTH = 50
+SITELOGO_SIZE = 24
+BANNER = "images/bandcut2.jpg"
+BANNER_SUBTITLE = "Data Science & Machine Learning with paper clips"
+BANNER_ALL_PAGES = False
