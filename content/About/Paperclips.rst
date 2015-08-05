@@ -8,7 +8,6 @@ Who What Y
 
 Experiments on various subjects using Python_ and R_ with a MacGyver spirit. This blog is about **data science** and **machine learning** using hyper tuned paper clips.
 
-.. image:: images/bandcut.jpg
 
 .. _R: https://www.r-project.org/
 
