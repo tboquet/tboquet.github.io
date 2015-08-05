@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Thomas Boquet'
 SITENAME = u'MacGRython'
-SITEURL = ''
+SITEURL = 'http://tboquet.github.io'
 PATH = 'content'
 
 TIMEZONE = 'America/Montreal'
