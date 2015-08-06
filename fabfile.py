@@ -92,3 +92,10 @@ def gh_pages():
     rebuild()
     local("ghp-import -b {github_pages_branch} {deploy_path}".format(**env))
     local("git push origin {github_pages_branch}".format(**env))
+
+def publishgit(msg):
+    preview() #builds publishconf.py
+    local("git add -A") #will commit allll files, be careful
+    local("git commit -m '%s'"%msg)
+    local("git push --all")
+    local("make github")
