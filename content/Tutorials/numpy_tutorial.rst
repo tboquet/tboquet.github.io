@@ -2,7 +2,6 @@ Numpy, a quick intro
 ####################
 
 
-:date: 2015-08-03 10:28
 :category: Tutorials 
 :tags: python, numpy, scipy 
 :summary: Numpy, tips and tricks 
