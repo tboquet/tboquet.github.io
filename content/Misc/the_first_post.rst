@@ -1,4 +1,4 @@
-Pelican + rST + Gihtub 
+Pelican + rST + Github 
 #######################
 
 :date: 2015-08-03 10:28
