@@ -5,7 +5,7 @@ Pelican + rST + Github
 :category: Misc
 :tags: introduction, pelican, github
 :comments: enable
-
+:summary: A first blog
 
 .. image:: https://avatars0.githubusercontent.com/u/2043492?v=3&s=200
    :height: 100
