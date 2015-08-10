@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>A full data science configuration - MacGRython</title>
+    <title>Ubuntu installation and configuration - MacGRython</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,22 +10,22 @@
 
 
 
-<link rel="canonical" href="http://tboquet.github.io/drafts/a-full-data-science-configuration.html">
+<link rel="canonical" href="http://tboquet.github.io/drafts/ubuntu-installation-and-configuration.html">
 
         <meta name="author" content="Thomas Boquet" />
-        <meta name="keywords" content="ubuntu,python,R" />
+        <meta name="keywords" content="ubuntu,setup,installation" />
         <meta name="description" content="Tools for data science" />
 
         <meta property="og:site_name" content="MacGRython" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="A full data science configuration"/>
-        <meta property="og:url" content="http://tboquet.github.io/drafts/a-full-data-science-configuration.html"/>
+        <meta property="og:title" content="Ubuntu installation and configuration"/>
+        <meta property="og:url" content="http://tboquet.github.io/drafts/ubuntu-installation-and-configuration.html"/>
         <meta property="og:description" content="Tools for data science"/>
         <meta property="article:published_time" content="2015-08-06" />
             <meta property="article:section" content="Tutorials" />
             <meta property="article:tag" content="ubuntu" />
-            <meta property="article:tag" content="python" />
-            <meta property="article:tag" content="R" />
+            <meta property="article:tag" content="setup" />
+            <meta property="article:tag" content="installation" />
             <meta property="article:author" content="Thomas Boquet" />
 
 
@@ -80,10 +80,10 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://tboquet.github.io/drafts/a-full-data-science-configuration.html"
+                    <a href="http://tboquet.github.io/drafts/ubuntu-installation-and-configuration.html"
                        rel="bookmark"
-                       title="Permalink to A full data science configuration">
-                        A full data science configuration
+                       title="Permalink to Ubuntu installation and configuration">
+                        Ubuntu installation and configuration
                     </a>
                 </h1>
             </header>
@@ -101,122 +101,62 @@
 <span class="label label-default">Tags</span>
 	<a href="http://tboquet.github.io/tag/ubuntu.html">ubuntu</a>
         /
-	<a href="http://tboquet.github.io/tag/python.html">python</a>
+	<a href="http://tboquet.github.io/tag/setup.html">setup</a>
         /
-	<a href="http://tboquet.github.io/tag/r.html">R</a>
+	<a href="http://tboquet.github.io/tag/installation.html">installation</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <div class="section" id="introduction">
 <h2>Introduction</h2>
-<p>Machine learning and data science are moving fast because we have more data and more opportunities to extract value from it. Researchers in the industry and the academia are finding new solutions to theoritical and applied problems <a class="reference external" href="http://arxiv.org/">every day</a>.</p>
-<img alt="Pelican" src="https://avatars0.githubusercontent.com/u/2043492?v=3&amp;s=200" style="height: 100px;" />
-<p>This technological ecosystem needs flexible and open source tools to evolve quickly with the help of a big community and we will see how we could follow this trend using the right software setup. This could be really important if you want to be efficient on some complex problems.</p>
-<div class="section" id="os-choice">
-<h3>OS choice</h3>
-<p>I use the 14.04.3 LTS (Long Term Support) Ubuntu version because a lot of people use it. When a lot of people are using a tool, you are sure to have a lot of answers to your questions on forums and in tutorials. That's a really good thing when you want to learn by yourself.</p>
-<p>A lot of big data, data science, machine learning (call them what you want) are also using Ubuntu and it makes it one of the OS of choice when moving from a user point of vue to a developer point of vue.</p>
-</div>
-<div class="section" id="programming-languages-and-tools">
-<h3>Programming languages and tools</h3>
-<p>In this tutorial, we will use Python and R. When we say use, it's more like writing Python and R calling some low level compiled C, C++ or Fortran libraries.</p>
-<p><strong>Why use Python?</strong></p>
+<p>If you are here you maybe want to install a new OS but first you maybe want to know if is complicated and how long it will take.
+We will go through:</p>
 <ol class="arabic simple">
-<li>It's a <strong>beautiful</strong> and <strong>simple</strong> language</li>
-<li>It forces you to use a specific indentation and it's good in a <strong>learning phase</strong> and to write <strong>reusable code</strong></li>
-<li>You could find a library that does <strong>exactly what you want</strong></li>
-<li>The machine learning community is <strong>using it extensively</strong></li>
-<li>The web developers community is <strong>using it a lot too</strong></li>
-<li>You have a Python community in each major city in the world!</li>
-<li>You could build a <strong>whole analytic pipeline</strong> only using Python</li>
+<li>The installation of the OS (15 minutes)</li>
+<li>A few command line tools that you will use (10 minutes)</li>
+<li>The customization of some elements in Ubuntu (10 minutes)</li>
 </ol>
-<p><strong>Why use R?</strong></p>
+<p>Within 30 minutes, you should be able to run your new OS with a descent customization and know some fancy command line tools to install new softwares on your machine.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>For this part, I have aggregated quickly some tutorials. I'll try to be explicit, and if it's not enough, the sources are at the end of the section for more details.</p>
 <ol class="arabic simple">
-<li>It's the language used by a lot of <strong>statisticians</strong></li>
-<li><a class="reference external" href="http://had.co.nz/">Hadley Wickham</a> (Yeah, this guy)</li>
-<li>It's <strong>really quick</strong> to do some <strong>simple stuffs</strong></li>
-<li>Even if you like Python so much, some packages are <strong>1000 times more efficient in R</strong> (because it involves a lot more C, C++ and Fortran)</li>
-<li>You will see a lot of <strong>MOOC</strong> using R making it <strong>easy to learn</strong></li>
+<li>create an usb bootable stick</li>
+<li>erase it all and allocate some space for the important part of the os</li>
+<li>put some infos and click on some buttons</li>
+<li>look at the progress bar and reboot</li>
+<li>enjoy Ubuntu</li>
 </ol>
-<p>Other stuffs:</p>
-<ul class="simple">
-<li>SAS it's old, it's <em>not flexible</em>, it's used by banks and big corporations and <strong>IT'S NOT FREE</strong></li>
-<li>SPSS: same thing, but used in marketing</li>
-</ul>
+<div class="section" id="bootable-usb-stick">
+<h3>Bootable usb stick</h3>
 </div>
-<div class="section" id="text-editors">
-<h3>Text editors</h3>
-<p>You have several good text editors and you should take a look at:</p>
-<ul class="simple">
-<li>emacs (hipster, old school #1)</li>
-<li>sublime text (hipster, mad jojo #2)</li>
-<li>vim (old school, super hero #3)</li>
-<li>atom (fairly new, it seems nice)</li>
-</ul>
-<p>I used sublime text a lot and it's a really good editor to start with. Emacs is now my favorite, due to it's awesome features (again, it's really hipster). You could also emulate vim behavior in emacs to become a superpowered old school hipster.</p>
+<div class="section" id="cleaning">
+<h3>Cleaning</h3>
 </div>
-<div class="section" id="utilies-and-system-libraries">
-<h3>Utilies and system libraries</h3>
-<p>git, htop, compilers, BLAS</p>
-<p>To be able to install, download and do some fancy stuffs, we need packages. To install a package, you could use the magic <cite>sudo apt-get install name-of-your-awesome-package</cite> like this:</p>
-<p><tt class="docutils literal">`bash
-sudo <span class="pre">apt-get</span> install htop
-`</tt>
-Ubuntu will ask you if you are sure you want to install it, we love htop so hit <cite>y</cite> and <cite>RET</cite> (return).
-After you get back the control of your terminal, we can verify that the program is working:</p>
-<p><tt class="docutils literal">`bash
-htop
-`</tt></p>
+<div class="section" id="infos">
+<h3>Infos</h3>
+</div>
+<div class="section" id="reboot">
+<h3>Reboot</h3>
+</div>
+<div class="section" id="enjoy">
+<h3>Enjoy</h3>
+<p>You should be able to see this screen:</p>
+<p>Explore your new environment a bit and search on the internet if you want some information.</p>
+</div>
+</div>
+<div class="section" id="command-line-tools">
+<h2>Command line tools</h2>
+<p>First you should learn how to install new programs from the command line.
+It will be important because a lot of tools have to be installed this way.</p>
+<p>Press <cite>CTL-ALT-T</cite> to open a new terminal.</p>
 <img alt="Pelican" src="https://avatars0.githubusercontent.com/u/2043492?v=3&amp;s=200" style="height: 100px;" />
-<p>Nice! If you are in a cafe, you look like a real baddass programmer.</p>
+<p>(or press the <cite>CMD</cite> key and type 'terminal')</p>
 <img alt="Pelican" src="https://avatars0.githubusercontent.com/u/2043492?v=3&amp;s=200" style="height: 100px;" />
-<p>For some packages we need to tell Ubuntu where to search for it on the internet. Ubuntu has some repositories from which it downloads source files from. You just have to add the adresses to search for these pieces of software to download, update and upgrade them.</p>
-<p>For this, you need to <cite>TODO ppa</cite></p>
-</div>
-<div class="section" id="zsh">
-<h3>ZSH</h3>
-<p>The command line tool you need. <cite>sudo apt-get</cite> it:</p>
-<p><tt class="docutils literal">`bash
-sudo <span class="pre">apt-get</span> zsh
-`</tt>
-and <cite>git clone</cite> the awesome <em>oh-my-zsh</em> custom config:</p>
-<p><tt class="docutils literal">`bash
-git clone TODO
-`</tt></p>
-<p>After that, you will be able to select an awesome theme. Change it in your .zshrc config that you could find in your <cite>/home</cite> directory (<cite>~/</cite>).</p>
-</div>
-<div class="section" id="emacs-spacemacs">
-<h3>Emacs (+ spacemacs)</h3>
-<p>You want to know more about emacs, it's a whole world, and you could go there.</p>
-</div>
-</div>
-<div class="section" id="python">
-<h2>Python</h2>
-<div class="section" id="python-distribution">
-<h3>Python distribution</h3>
-</div>
-<div class="section" id="python-packages">
-<h3>Python packages</h3>
-</div>
-</div>
-<div class="section" id="r">
-<h2>R</h2>
-<div class="section" id="r-distribution">
-<h3>R distribution</h3>
-</div>
-<div class="section" id="r-packages">
-<h3>R packages</h3>
-</div>
-</div>
-<div class="section" id="conclusion">
-<h2>Conclusion</h2>
-<!-- _ -->
-<!-- _ -->
-<!-- _ -->
-<!-- _ -->
-<!-- _ -->
-<!-- _ -->
-<!-- _ -->
+<p>(or click on the 'search your computer' button situated at the top left corner of your screen)</p>
+<img alt="Pelican" src="https://avatars0.githubusercontent.com/u/2043492?v=3&amp;s=200" style="height: 100px;" />
+<p>When you have your terminal opened</p>
 </div>
 
             </div>
@@ -230,8 +170,8 @@ git clone TODO
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'macgython'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'a-full-data-science-configuration';
-                var disqus_url = 'http://tboquet.github.io/drafts/a-full-data-science-configuration.html';
+                    var disqus_identifier = 'ubuntu-installation-and-configuration';
+                var disqus_url = 'http://tboquet.github.io/drafts/ubuntu-installation-and-configuration.html';
 
             var disqus_config = function () {
                 this.language = "en";
