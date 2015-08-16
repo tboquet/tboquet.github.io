@@ -5,7 +5,8 @@ Ubuntu installation and configuration
 :date: 2015-08-06 8:28
 :category: Tutorials 
 :tags: ubuntu, setup, installation 
-:summary: Install and configure your system 
+:summary: Install and configure your system
+:draft: true
 
 
 Prerequisite
