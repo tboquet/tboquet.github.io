@@ -1,5 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MacGRython</title><link href="http://tboquet.github.io/" rel="alternate"></link><link href="http://tboquet.github.io/feeds/all.atom.xml" rel="self"></link><id>http://tboquet.github.io/</id><updated>2015-08-03T10:28:00-04:00</updated><entry><title>Pelican + rST + Github</title><link href="http://tboquet.github.io/pelican-rst-github.html" rel="alternate"></link><updated>2015-08-03T10:28:00-04:00</updated><author><name>Thomas Boquet</name></author><id>tag:tboquet.github.io,2015-08-03:pelican-rst-github.html</id><summary type="html">&lt;img alt="Pelican" src="https://avatars0.githubusercontent.com/u/2043492?v=3&amp;amp;s=200" style="height: 100px;" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MacGRython</title><link href="http://tboquet.github.io/" rel="alternate"></link><link href="http://tboquet.github.io/feeds/all.atom.xml" rel="self"></link><id>http://tboquet.github.io/</id><updated>2015-08-06T08:28:00-04:00</updated><entry><title>Ubuntu installation and configuration</title><link href="http://tboquet.github.io/ubuntu-installation-and-configuration.html" rel="alternate"></link><updated>2015-08-06T08:28:00-04:00</updated><author><name>Thomas Boquet</name></author><id>tag:tboquet.github.io,2015-08-06:ubuntu-installation-and-configuration.html</id><summary type="html">&lt;div class="section" id="prerequisite"&gt;
+&lt;h2&gt;Prerequisite&lt;/h2&gt;
+&lt;p&gt;You will need a 2gb usb key and 35 minutes to complete this tutorial and enjoy Ubuntu.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;If you are here you maybe want to install a new OS but first you maybe want to know if is complicated and how long it will take.
+We will go through:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;The installation of the OS (15 minutes)&lt;/li&gt;
+&lt;li&gt;A few command line tools that you will use (10 minutes)&lt;/li&gt;
+&lt;li&gt;The customization of some elements in Ubuntu (10 minutes)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Within 35 minutes, you should be able to run your new OS with a descent customization and know some fancy command line tools to install new software on your machine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installation"&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;p&gt;For this part, I have aggregated quickly some tutorials (&lt;a class="footnote-reference" href="#id4" id="id1"&gt;[1]&lt;/a&gt;, &lt;a class="footnote-reference" href="#id5" id="id2"&gt;[2]&lt;/a&gt;). I'll try to be explicit, and if it's not enough, the sources are at the end of the article for more details.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;create an usb bootable stick&lt;/li&gt;
+&lt;li&gt;erase it all and allocate some space for the important part of the os&lt;/li&gt;
+&lt;li&gt;put some infos and click on some buttons&lt;/li&gt;
+&lt;li&gt;look at the progress bar and reboot&lt;/li&gt;
+&lt;li&gt;enjoy Ubuntu&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="section" id="bootable-usb-stick"&gt;
+&lt;h3&gt;Bootable usb stick&lt;/h3&gt;
+&lt;p&gt;(For this part I will assume that you are running Windows)&lt;/p&gt;
+&lt;p&gt;First you have to download the latest &lt;a class="reference external" href="http://www.ubuntu.com/download/desktop"&gt;Ubuntu iso image&lt;/a&gt; and the &lt;a class="reference external" href="http://www.pendrivelinux.com/downloads/Universal-USB-Installer/Universal-USB-Installer-1.9.6.1.exe"&gt;Pendrive Linux universal USB installer&lt;/a&gt;.
+When you have both files run the Pendrive installer and follow these instructions:
+Before going further note that this operation will format your usb key and you need to save your files.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Select the &lt;strong&gt;Ubuntu&lt;/strong&gt; from the dropdown list&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="Pelican" class="align-center" src="images/mcplaceholdermin.jpg" style="height: 300px;" /&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;Click &lt;strong&gt;browse&lt;/strong&gt; and open the ISO file you just downloaded&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="Pelican" class="align-center" src="images/mcplaceholdermin.jpg" style="height: 300px;" /&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;Choose your USB drive and click on &lt;strong&gt;create&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="Pelican" class="align-center" src="images/mcplaceholdermin.jpg" style="height: 300px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;Installation&lt;/h3&gt;
+&lt;p&gt;In this section, you have 2 options:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Format your disk and install Ubuntu&lt;/li&gt;
+&lt;li&gt;Install Ubuntu alongside with Windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Choose the first option if you really need Windows for some applications and if you have enough storage (minimum 500 gigabytes on your primary disk or 2 separate disks).&lt;/p&gt;
+&lt;div class="section" id="only-ubuntu"&gt;
+&lt;h4&gt;Only Ubuntu&lt;/h4&gt;
+&lt;p&gt;Now is the time to clean up your disk and install your new OS.
+If you have some personal files hidden somewhere, now is the good time to save them on a external hard drive or another usb stick.&lt;/p&gt;
+&lt;p&gt;When it's done we begin by giving the system some basic information. At the fourth step you will have to choose an installation method:&lt;/p&gt;
+&lt;img alt="Installation method" class="align-center" src="images/ubuntu_tuto/KURnS.png" style="height: 400px;" /&gt;
+&lt;p&gt;We will manually allocate some space for some parts of the OS to have enough space for large folders (like several loaded virtual environments in Python).
+To do so, select &lt;strong&gt;something else&lt;/strong&gt; and click on continue.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="infos"&gt;
+&lt;h3&gt;Infos&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class="section" id="reboot"&gt;
+&lt;h3&gt;Reboot&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class="section" id="enjoy"&gt;
+&lt;h3&gt;Enjoy&lt;/h3&gt;
+&lt;p&gt;You should be able to see this screen:&lt;/p&gt;
+&lt;p&gt;Explore your new environment a bit and search on the internet if you want some information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="command-line-tools"&gt;
+&lt;h2&gt;Command line tools&lt;/h2&gt;
+&lt;p&gt;First you should learn how to install new programs from the command line.
+It will be important because a lot of tools have to be installed this way.&lt;/p&gt;
+&lt;p&gt;Press &lt;cite&gt;CTL-ALT-T&lt;/cite&gt; to open a new terminal.&lt;/p&gt;
+&lt;img alt="Pelican" class="align-center" src="images/mcplaceholdermin.jpg" style="height: 300px;" /&gt;
+&lt;p&gt;(or press the &lt;cite&gt;CMD&lt;/cite&gt; key and type 'terminal')&lt;/p&gt;
+&lt;img alt="Pelican" class="align-center" src="images/mcplaceholdermin.jpg" style="height: 300px;" /&gt;
+&lt;p&gt;(or click on the 'search your computer' button situated at the top left corner of your screen)&lt;/p&gt;
+&lt;img alt="Pelican" class="align-center" src="images/mcplaceholdermin.jpg" style="height: 300px;" /&gt;
+&lt;p&gt;When you have your terminal opened&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;I took the steps from &lt;a class="reference external" href="http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows"&gt;Ubuntu's tutorial&lt;/a&gt; for the usb stick part.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;The images in the installation steps are from this question from &lt;a class="reference external" href="http://askubuntu.com/questions/343268/how-to-use-manual-partitioning-during-installation"&gt;askubuntu&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</summary><category term="ubuntu"></category><category term="setup"></category><category term="installation"></category></entry><entry><title>Pelican + rST + Github</title><link href="http://tboquet.github.io/pelican-rst-github.html" rel="alternate"></link><updated>2015-08-03T10:28:00-04:00</updated><author><name>Thomas Boquet</name></author><id>tag:tboquet.github.io,2015-08-03:pelican-rst-github.html</id><summary type="html">&lt;img alt="Pelican" src="https://avatars0.githubusercontent.com/u/2043492?v=3&amp;amp;s=200" style="height: 100px;" /&gt;
 &lt;p&gt;The messy cartesian organization of the information we could find in the fields of data and computer science needs to be written in order to be understood.
 Because the goal of this blog is to quickly render some ideas, this process has to be fast and the production easy to read.&lt;/p&gt;
 &lt;p&gt;To be able to share some experiments and meet these goals, I chose &lt;strong&gt;Pelican&lt;/strong&gt; and a base theme from &lt;strong&gt;pelican-theme&lt;/strong&gt; to begin blogging about my discoveries.

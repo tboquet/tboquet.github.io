@@ -33,7 +33,7 @@ DEFAULT_PAGINATION = 5
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = False
 
-THEME = "theme"
+THEME = "../../pelican-bootstrap3/"
 BOOTSTRAP_THEME = "cosmo"
 SITELOGO = "images/transwhite.png"
 DISPLAY_TAGS_ON_SIDEBAR = False
