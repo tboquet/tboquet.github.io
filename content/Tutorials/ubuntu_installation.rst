@@ -6,7 +6,7 @@ Ubuntu installation and configuration
 :category: Tutorials 
 :tags: ubuntu, setup, installation 
 :summary: Install and configure your system
-:draft: true
+:status: draft
 
 
 Prerequisite
