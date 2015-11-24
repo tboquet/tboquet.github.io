@@ -11,6 +11,12 @@ TIMEZONE = 'America/Montreal'
 
 DEFAULT_LANG = u'en'
 
+# ipynb setup
+MARKUP = ('md', 'ipynb')
+
+PLUGIN_PATH = './plugins'
+PLUGINS = ['ipynb']
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
