@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Test - MacGRython</title>
+    <title>numpy - MacGRython</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,23 +10,16 @@
 
 
 
-<link rel="canonical" href="http://tboquet.github.io/drafts/test.html">
 
-        <meta name="author" content="Thomas Boquet" />
-        <meta name="keywords" content="python,numpy,scipy" />
-        <meta name="description" content="Numpy, tips and tricks" />
+    <meta name="author" content="Thomas Boquet" />
+    <meta name="keywords" content="numpy" />
 
+    <!-- Open Graph tags -->
         <meta property="og:site_name" content="MacGRython" />
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Test"/>
-        <meta property="og:url" content="http://tboquet.github.io/drafts/test.html"/>
-        <meta property="og:description" content="Numpy, tips and tricks"/>
-        <meta property="article:published_time" content="2015-08-03" />
-            <meta property="article:section" content="Tutorials" />
-            <meta property="article:tag" content="python" />
-            <meta property="article:tag" content="numpy" />
-            <meta property="article:tag" content="scipy" />
-            <meta property="article:author" content="Thomas Boquet" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="MacGRython"/>
+        <meta property="og:url" content="http://tboquet.github.io"/>
+        <meta property="og:description" content="MacGRython"/>
 
 
     <!-- Bootstrap -->
@@ -62,6 +55,9 @@
                         <li >
                             <a href="http://tboquet.github.io/category/misc.html">Misc</a>
                         </li>
+                        <li >
+                            <a href="http://tboquet.github.io/category/tutorials.html">Tutorials</a>
+                        </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="http://tboquet.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
@@ -76,93 +72,14 @@
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="http://tboquet.github.io/drafts/test.html"
-                       rel="bookmark"
-                       title="Permalink to Test">
-                        Test
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-08-03T10:28:00-04:00"> Mon 03 August 2015</time>
-    </span>
+            <article>
+                <h2><a href="http://tboquet.github.io/test.html">Test</a></h2>
+                <div class="summary"><p class="first last">Numpy, tips and tricks</p>
 
-
-
-<span class="label label-default">Tags</span>
-	<a href="http://tboquet.github.io/tag/python.html">python</a>
-        /
-	<a href="http://tboquet.github.io/tag/numpy.html">numpy</a>
-        /
-	<a href="http://tboquet.github.io/tag/scipy.html">scipy</a>
-    
-</footer><!-- /.post-info -->                    </div>
+                    <a class="btn btn-default btn-xs" href="http://tboquet.github.io/test.html">more ...</a>
                 </div>
-                <div class="section" id="this-is-a-test">
-<h2>This is a test</h2>
-<p><span class="formula"><span class="limits"><span class="limit"><span class="symbol">∑</span></span></span><i>x</i><sub><i>i</i></sub> = <i>β</i></span></p>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-</pre>
-<pre class="code python literal-block">
-<span class="n">my_ar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">my_ar</span><span class="p">)</span>
-</pre>
-<pre class="literal-block">
-[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19]
-</pre>
-<pre class="code python literal-block">
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">my_ar</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre>
-<img alt="" src="../../images/test_files/test_4_0.png" />
-</div>
-
-            </div>
-            <!-- /.entry-content -->
-    <hr/>
-    <section class="comments" id="comments">
-        <h2>Comments</h2>
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'macgython'; // required: replace example with your forum shortname
-
-                    var disqus_identifier = 'test';
-                var disqus_url = 'http://tboquet.github.io/drafts/test.html';
-
-            var disqus_config = function () {
-                this.language = "en";
-            };
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </section>
-        </article>
-    </section>
+            </article>
+            <hr/>
 
         </div>
         <div class="col-sm-3" id="sidebar">

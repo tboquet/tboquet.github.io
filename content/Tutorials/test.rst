@@ -7,7 +7,6 @@ Test
 :category: Tutorials 
 :tags: python, numpy, scipy 
 :summary: Numpy, tips and tricks 
-:status: draft
 
 This is a test
 ==============

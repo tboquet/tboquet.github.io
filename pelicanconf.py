@@ -12,10 +12,10 @@ TIMEZONE = 'America/Montreal'
 DEFAULT_LANG = u'en'
 
 # ipynb setup
-MARKUP = ['md', 'ipynb']
+# MARKUP = ['md', 'ipynb']
 
-PLUGIN_PATHS = './plugins'
-PLUGINS = ['ipynb']
+# PLUGIN_PATHS = './plugins'
+# PLUGINS = ['ipynb']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -49,5 +49,5 @@ SITELOGO_SIZE = 24
 BANNER = "images/bandcut2.jpg"
 BANNER_SUBTITLE = "Data Science & Machine Learning with paper clips"
 BANNER_ALL_PAGES = False
-# ABOUT_ME = "Data Scientist at Gameloft, juggling with machine learning and statistical tools in Python and R to tackle business challenges."
+# ABOUT_ME = "Data Scientist at R2, juggling with machine learning and statistical tools in Python and R to tackle business challenges."
 # AVATAR = "images/profile.jpg"
