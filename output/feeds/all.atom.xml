@@ -10,7 +10,7 @@ From the first look, these tool are good candidates to start sharing and they ha
 &lt;p&gt;The next post will describe all the steps to have a working configuration of Pelican.&lt;/p&gt;
 </summary><category term="introduction"></category><category term="pelican"></category><category term="github"></category></entry><entry><title>Test</title><link href="http://tboquet.github.io/test.html" rel="alternate"></link><updated>2015-08-03T10:28:00-04:00</updated><author><name>Thomas Boquet</name></author><id>tag:tboquet.github.io,2015-08-03:test.html</id><summary type="html">&lt;div class="section" id="this-is-a-test"&gt;
 &lt;h2&gt;This is a test&lt;/h2&gt;
-&lt;p&gt;&lt;span class="formula"&gt;&lt;span class="limits"&gt;&lt;span class="limit"&gt;&lt;span class="symbol"&gt;∑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;i&gt;x&lt;/i&gt;&lt;sub&gt;&lt;i&gt;i&lt;/i&gt;&lt;/sub&gt; = &lt;i&gt;β&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\sum x_i = \beta\)&lt;/span&gt;&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
@@ -29,5 +29,61 @@ From the first look, these tool are good candidates to start sharing and they ha
 &lt;/pre&gt;
 &lt;img alt="" src="../../images/test_files/test_4_0.png" /&gt;
 &lt;/div&gt;
-</summary><category term="python"></category><category term="numpy"></category><category term="scipy"></category></entry><entry><title>Who What Y</title><link href="http://tboquet.github.io/who-what-y.html" rel="alternate"></link><updated>2015-08-03T10:28:00-04:00</updated><author><name>Thomas Boquet</name></author><id>tag:tboquet.github.io,2015-08-03:who-what-y.html</id><summary type="html">&lt;p&gt;Experiments on various subjects using &lt;a class="reference external" href="http://www.python.org/"&gt;Python&lt;/a&gt; and &lt;a class="reference external" href="https://www.r-project.org/"&gt;R&lt;/a&gt; with a MacGyver spirit. This blog is about &lt;strong&gt;data science&lt;/strong&gt; and &lt;strong&gt;machine learning&lt;/strong&gt; using hyper tuned paper clips.&lt;/p&gt;
+&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><category term="python"></category><category term="numpy"></category><category term="scipy"></category></entry><entry><title>Who What Y</title><link href="http://tboquet.github.io/who-what-y.html" rel="alternate"></link><updated>2015-08-03T10:28:00-04:00</updated><author><name>Thomas Boquet</name></author><id>tag:tboquet.github.io,2015-08-03:who-what-y.html</id><summary type="html">&lt;p&gt;Experiments on various subjects using &lt;a class="reference external" href="http://www.python.org/"&gt;Python&lt;/a&gt; and &lt;a class="reference external" href="https://www.r-project.org/"&gt;R&lt;/a&gt; with a MacGyver spirit. This blog is about &lt;strong&gt;data science&lt;/strong&gt; and &lt;strong&gt;machine learning&lt;/strong&gt; using hyper tuned paper clips.&lt;/p&gt;
 </summary><category term="information"></category><category term="about"></category><category term="python"></category><category term="R"></category></entry></feed>
