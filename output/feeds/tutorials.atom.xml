@@ -5,8 +5,7 @@
 Networks.&lt;/p&gt;
 &lt;p&gt;We will try to predict time series (continuous signals) using simple
 architectures.&lt;/p&gt;
-&lt;p&gt;The notation used are taken from the &lt;a class="reference external" href="https://www.youtube.com/playlist?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH"&gt;best introduction&lt;/a&gt; to neural networks I've found from Hugo
-Larochelle.&lt;/p&gt;
+&lt;p&gt;The notation used are taken from the &lt;a class="reference external" href="https://www.youtube.com/playlist?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH"&gt;best introduction&lt;/a&gt; to neural networks I've found from Hugo Larochelle.&lt;/p&gt;
 &lt;p&gt;Suppose that we want to study a time series following this process:&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
@@ -36,10 +35,12 @@ y_t = \sin(\pi\frac{x_t}{800})
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
 &lt;img alt="" src="../../images/nnpart1_files/nnpart1_6_0.png" /&gt;
-&lt;p&gt;Observations :
-1. it's a nonlinear process
-2. it's not stationary because we see big cycles and seasonnality
-3. it's strictly positive&lt;/p&gt;
+&lt;p&gt;Observations :&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;it's a nonlinear process&lt;/li&gt;
+&lt;li&gt;it's not stationary because we see big cycles and seasonnality&lt;/li&gt;
+&lt;li&gt;it's strictly positive&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Let's try a simple neural net with a single hidden layer on this data.&lt;/p&gt;
 &lt;p&gt;let &lt;span class="math"&gt;\(y_t\)&lt;/span&gt; be the value of the signal at time
 &lt;span class="math"&gt;\(t=1,\dots, 100000\)&lt;/span&gt;&lt;/p&gt;
