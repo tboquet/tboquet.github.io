@@ -26,7 +26,7 @@ Suppose that we want to study a time series following this process:
 
 We can easily generate this data with numpy:
 
-.. code:: python
+.. code-block:: python
 
     import numpy as np
     np.random.seed(1337)
@@ -42,7 +42,7 @@ We can easily generate this data with numpy:
 
 Graphically we have a nice sinusoidal function:
 
-.. code:: python
+.. code-block:: python
 
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -87,7 +87,7 @@ Here we will build a hidden layer with 10 units the hidden layer
 activation function :math:`g()` is a sigmoid and the output layer
 activation function is linear.
 
-.. code:: python
+.. code-block:: python
 
     import theano
     import keras
@@ -105,7 +105,7 @@ activation function is linear.
     
     model.compile(optimizer=adam, loss={'output':'mse'})
 
-.. code:: python
+.. code-block:: python
 
     from IPython.display import SVG
     from keras.utils.visualize_util import to_graph
@@ -119,7 +119,7 @@ activation function is linear.
 
 
 
-.. code:: python
+.. code-block:: python
 
     print([np.prod(p.shape.eval()) for p in model.params])
     print(model.count_params())
@@ -132,7 +132,7 @@ activation function is linear.
     31
 
 
-.. code:: python
+.. code-block:: python
 
     time = (time - time.mean())/time.std()
     history = model.fit({'exog': time[:-30000,None], 'output': y_t[:-30000]},
@@ -176,7 +176,7 @@ activation function is linear.
     70000/70000 [==============================] - 2s - loss: 1.0196 - val_loss: 4.2425
 
 
-.. code:: python
+.. code-block:: python
 
     plt.plot(history.history["val_loss"])
     plt.show()
@@ -186,7 +186,7 @@ activation function is linear.
 .. image:: ../../images/nnpart1_files/nnpart1_13_0.png
 
 
-.. code:: python
+.. code-block:: python
 
     predictions_oos = model.predict({'exog': time[-30000:,None]}, batch_size=128)
     predictions_is = model.predict({'exog': time[:-30000,None]}, batch_size=128)
@@ -216,7 +216,7 @@ is not crazy. Let's add some regularization on the parameters of the
 last layer. We choose a L1 regularization to have a sparse structure in
 the model. TODO REF
 
-.. code:: python
+.. code-block:: python
 
     from keras.regularizers import l1l2, l1
     
@@ -229,7 +229,7 @@ the model. TODO REF
     
     model.compile(optimizer=adam, loss={'output':'mse'})
 
-.. code:: python
+.. code-block:: python
 
     history = model.fit({'exog': time[:-30000,None], 'output': y_t[:-30000]},
               validation_data={'exog':time[-30000:, None], 'output': y_t[-30000:]},
@@ -272,7 +272,7 @@ the model. TODO REF
     70000/70000 [==============================] - 3s - loss: 1.1203 - val_loss: 1.7094
 
 
-.. code:: python
+.. code-block:: python
 
     plt.plot(history.history["val_loss"])
     plt.show()
@@ -282,7 +282,7 @@ the model. TODO REF
 .. image:: ../../images/nnpart1_files/nnpart1_18_0.png
 
 
-.. code:: python
+.. code-block:: python
 
     predictions_oos = model.predict({'exog': time[-30000:,None]}, batch_size=128)
     predictions_is = model.predict({'exog': time[:-30000,None]}, batch_size=128)
@@ -318,7 +318,7 @@ time series to capture the recurrent patterns we see.
 
 To do so, we crop some patches out of our time series.
 
-.. code:: python
+.. code-block:: python
 
     from sklearn.feature_extraction.image import extract_patches_2d
     
@@ -328,7 +328,7 @@ To do so, we crop some patches out of our time series.
     y_train = data_patched[:,-1,-1]
     endog_train = data_patched[:,-len_ts_y-1:-1,-1]
 
-.. code:: python
+.. code-block:: python
 
     endog_train.shape
 
@@ -341,11 +341,11 @@ To do so, we crop some patches out of our time series.
 
 
 
-.. code:: python
+.. code-block:: python
 
     endog_train = (endog_train-endog_train.mean(axis=0))/endog_train.std(axis=0)
 
-.. code:: python
+.. code-block:: python
 
     model = Graph()
     model.add_input(name='endog', input_shape=(59,))
@@ -356,7 +356,7 @@ To do so, we crop some patches out of our time series.
     
     model.compile(optimizer=adam, loss={'output':'mse'})
 
-.. code:: python
+.. code-block:: python
 
     history = model.fit({'endog': endog_train[:-30000].reshape(-1,59), 'output': y_t[:-30000]},
               validation_data={'endog':endog_train[-30000:].reshape(-1,59), 'output': y_t[-30000:]},
@@ -399,7 +399,7 @@ To do so, we crop some patches out of our time series.
     69941/69941 [==============================] - 2s - loss: 0.0005 - val_loss: 1.2757
 
 
-.. code:: python
+.. code-block:: python
 
     predictions_oos = model.predict({'exog': endog_train[-30000:].reshape(-1,59)}, batch_size=128)
     predictions_is = model.predict({'exog': endog_train[:-30000].reshape(-1,59)}, batch_size=128)
