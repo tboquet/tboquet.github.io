@@ -38,7 +38,7 @@ DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = False
-
+PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}
 THEME = "../pelican-themes/pelican-bootstrap3/"
 BOOTSTRAP_THEME = "cosmo"
 SITELOGO = "images/transwhite.png"
