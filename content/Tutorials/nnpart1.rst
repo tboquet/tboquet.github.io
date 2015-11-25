@@ -24,8 +24,15 @@ Suppose that we want to study a time series following this process:
 
 .. math:: y_t = \sin(\pi\frac{x_t}{800})
 
+
 We can easily generate this data with numpy:
 
+
+.. code-block:: python
+
+   print("Pelican is a static site generator.")
+
+             
 .. code-block:: python
 
     import numpy as np
@@ -218,16 +225,16 @@ the model. TODO REF
 
 .. code-block:: python
 
-     from keras.regularizers import l1l2, l1
+    from keras.regularizers import l1l2, l1
     
-     model = Graph()
-     model.add_input(name='exog', input_shape=(1,))
-     model.add_node(Dense(10, activation="sigmoid", W_regularizer=l1(0.1)), name='dense1', input='exog')
-     model.add_node(Dense(1, activation="linear"), name='last_dense', input='dense1')
-     model.add_output(name='output', input='last_dense')
-     adam = Adam(lr=1e-2, beta_1=0.9, beta_2=0.999, epsilon=1e-8)
+    model = Graph()
+    model.add_input(name='exog', input_shape=(1,))
+    model.add_node(Dense(10, activation="sigmoid", W_regularizer=l1(0.1)), name='dense1', input='exog')
+    model.add_node(Dense(1, activation="linear"), name='last_dense', input='dense1')
+    model.add_output(name='output', input='last_dense')
+    adam = Adam(lr=1e-2, beta_1=0.9, beta_2=0.999, epsilon=1e-8)
     
-     model.compile(optimizer=adam, loss={'output':'mse'})
+    model.compile(optimizer=adam, loss={'output':'mse'})
 
 .. code-block:: python
 
