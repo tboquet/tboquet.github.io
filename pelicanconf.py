@@ -13,7 +13,7 @@ DEFAULT_LANG = u'en'
 
 # ipynb setup
 MARKUP = ['md', 'ipynb']
-
+IPYNB_USE_META_SUMMARY = True
 PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['render_math', 'ipynb']
 
