@@ -5,7 +5,7 @@
 Networks.&lt;/p&gt;
 &lt;p&gt;We will try to predict time series (continuous signals) using simple
 architectures.&lt;/p&gt;
-&lt;p&gt;The notation used are taken from the &lt;a class="reference external" href="https://www.youtube.com/playlist?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH"&gt;best&lt;/a&gt; introduction to neural networks I've found from Hugo Larochelle.&lt;/p&gt;
+&lt;p&gt;The notation used are taken from the &lt;a class="reference external" href="https://www.youtube.com/playlist?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH"&gt;best introduction&lt;/a&gt; to neural networks I've found from Hugo Larochelle.&lt;/p&gt;
 &lt;p&gt;Suppose that we want to study a time series following this process:&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}

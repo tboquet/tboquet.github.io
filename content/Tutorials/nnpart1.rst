@@ -18,7 +18,7 @@ Networks.
 We will try to predict time series (continuous signals) using simple
 architectures.
 
-The notation used are taken from the `best`_ introduction to neural networks I've found from Hugo Larochelle.
+The notation used are taken from the `best introduction`_ to neural networks I've found from Hugo Larochelle.
 
 Suppose that we want to study a time series following this process:
 
@@ -424,4 +424,4 @@ To do so, we crop some patches out of our time series.
 .. image:: ../../images/nnpart1_files/nnpart1_29_1.png
 
 
-.. _best: https://www.youtube.com/playlist?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH
+.. _`best introduction`: https://www.youtube.com/playlist?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH
