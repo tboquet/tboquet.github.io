@@ -121,16 +121,7 @@ y_t = \sin(\pi\frac{x_t}{800})
 \end{equation*}
 </div>
 <p>We can easily generate this data with numpy:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcsskn">import</span> <span class="pgcssnn">numpy</span> <span class="pgcsskn">as</span> <span class="pgcssnn">np</span>
+<div class="highlight"><pre><span class="pgcsskn">import</span> <span class="pgcssnn">numpy</span> <span class="pgcsskn">as</span> <span class="pgcssnn">np</span>
 <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">random</span><span class="pgcsso">.</span><span class="pgcssn">seed</span><span class="pgcssp">(</span><span class="pgcssmi">1337</span><span class="pgcssp">)</span>
 
 
@@ -141,20 +132,15 @@ y_t = \sin(\pi\frac{x_t}{800})
 
 <span class="pgcssn">y_t</span> <span class="pgcsso">=</span> <span class="pgcssmi">40</span> <span class="pgcsso">+</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">sin</span><span class="pgcssp">((</span><span class="pgcssmi">2</span> <span class="pgcsso">*</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">pi</span> <span class="pgcsso">*</span> <span class="pgcssn">f</span> <span class="pgcsso">*</span> <span class="pgcssn">time</span><span class="pgcssp">)</span><span class="pgcsso">/</span> <span class="pgcssn">Fs</span><span class="pgcsso">/</span><span class="pgcssmi">100</span><span class="pgcssp">)</span> <span class="pgcsso">+</span><span class="pgcssmf">1e-5</span><span class="pgcsso">*</span><span class="pgcssn">time</span><span class="pgcsso">+</span><span class="pgcssmf">1e-9</span><span class="pgcsso">*</span><span class="pgcssn">time</span><span class="pgcsso">**</span><span class="pgcssmi">2</span> <span class="pgcsso">+</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">sin</span><span class="pgcssp">((</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">pi</span> <span class="pgcsso">*</span> <span class="pgcssn">f</span><span class="pgcsso">/</span><span class="pgcssmi">2</span> <span class="pgcsso">*</span> <span class="pgcssn">time</span><span class="pgcssp">)</span> <span class="pgcsso">/</span> <span class="pgcssn">Fs</span> <span class="pgcsso">/</span> <span class="pgcssmi">15</span><span class="pgcssp">)</span>
 </pre></div>
-</td></tr></table><p>Graphically we have a nice sinusoidal function:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcsskn">import</span> <span class="pgcssnn">matplotlib.pyplot</span> <span class="pgcsskn">as</span> <span class="pgcssnn">plt</span>
+<p>Graphically we have a nice sinusoidal function:</p>
+<div class="highlight"><pre><span class="pgcsskn">import</span> <span class="pgcssnn">matplotlib.pyplot</span> <span class="pgcsskn">as</span> <span class="pgcssnn">plt</span>
 <span class="pgcsso">%</span><span class="pgcssn">matplotlib</span> <span class="pgcssn">inline</span>
 <span class="pgcssn">fig</span> <span class="pgcsso">=</span> <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">figure</span><span class="pgcssp">(</span><span class="pgcssn">figsize</span><span class="pgcsso">=</span><span class="pgcssp">(</span><span class="pgcssmi">12</span><span class="pgcssp">,</span><span class="pgcssmi">8</span><span class="pgcssp">))</span>
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">style</span><span class="pgcsso">.</span><span class="pgcssn">use</span><span class="pgcssp">(</span><span class="pgcsss">&#39;ggplot&#39;</span><span class="pgcssp">)</span>
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">plot</span><span class="pgcssp">(</span><span class="pgcssn">y_t</span><span class="pgcssp">[:])</span>
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">show</span><span class="pgcssp">()</span>
 </pre></div>
-</td></tr></table><img alt="" src="../../images/nnpart1_files/nnpart1_6_0.png" />
+<img alt="" src="../../images/nnpart1_files/nnpart1_6_0.png" />
 <p>Observations :</p>
 <ol class="arabic simple">
 <li>it's a nonlinear process</li>
@@ -193,21 +179,7 @@ f(t) = o(b^{(2)} + w_i^{(2)}h^{(1)}(t)_i)
 <p>Here we will build a hidden layer with 10 units the hidden layer
 activation function <span class="math">\(g()\)</span> is a sigmoid and the output layer
 activation function is linear.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcsskn">import</span> <span class="pgcssnn">theano</span>
+<div class="highlight"><pre><span class="pgcsskn">import</span> <span class="pgcssnn">theano</span>
 <span class="pgcsskn">import</span> <span class="pgcssnn">keras</span>
 <span class="pgcsskn">from</span> <span class="pgcssnn">keras.models</span> <span class="pgcsskn">import</span> <span class="pgcssn">Graph</span>
 <span class="pgcsskn">from</span> <span class="pgcssnn">keras.layers.core</span> <span class="pgcsskn">import</span> <span class="pgcssn">Dense</span>
@@ -223,36 +195,28 @@ activation function is linear.</p>
 
 <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">compile</span><span class="pgcssp">(</span><span class="pgcssn">optimizer</span><span class="pgcsso">=</span><span class="pgcssn">adam</span><span class="pgcssp">,</span> <span class="pgcssn">loss</span><span class="pgcsso">=</span><span class="pgcssp">{</span><span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span><span class="pgcsss">&#39;mse&#39;</span><span class="pgcssp">})</span>
 </pre></div>
-</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcsskn">from</span> <span class="pgcssnn">IPython.display</span> <span class="pgcsskn">import</span> <span class="pgcssn">SVG</span>
+<div class="highlight"><pre><span class="pgcsskn">from</span> <span class="pgcssnn">IPython.display</span> <span class="pgcsskn">import</span> <span class="pgcssn">SVG</span>
 <span class="pgcsskn">from</span> <span class="pgcssnn">keras.utils.visualize_util</span> <span class="pgcsskn">import</span> <span class="pgcssn">to_graph</span>
 
 <span class="pgcssn">SVG</span><span class="pgcssp">(</span><span class="pgcssn">to_graph</span><span class="pgcssp">(</span><span class="pgcssn">model</span><span class="pgcssp">)</span><span class="pgcsso">.</span><span class="pgcssn">create</span><span class="pgcssp">(</span><span class="pgcssn">prog</span><span class="pgcsso">=</span><span class="pgcsss">&#39;dot&#39;</span><span class="pgcssp">,</span> <span class="pgcssn">format</span><span class="pgcsso">=</span><span class="pgcsss">&#39;svg&#39;</span><span class="pgcssp">))</span>
 </pre></div>
-</td></tr></table><object data="../../images/nnpart1_files/nnpart1_10_0.svg" type="image/svg+xml">
+<object data="../../images/nnpart1_files/nnpart1_10_0.svg" type="image/svg+xml">
 </object>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssk">print</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">prod</span><span class="pgcssp">(</span><span class="pgcssn">p</span><span class="pgcsso">.</span><span class="pgcssn">shape</span><span class="pgcsso">.</span><span class="pgcssn">eval</span><span class="pgcssp">())</span> <span class="pgcssk">for</span> <span class="pgcssn">p</span> <span class="pgcssow">in</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">params</span><span class="pgcssp">])</span>
+<div class="highlight"><pre><span class="pgcssk">print</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">prod</span><span class="pgcssp">(</span><span class="pgcssn">p</span><span class="pgcsso">.</span><span class="pgcssn">shape</span><span class="pgcsso">.</span><span class="pgcssn">eval</span><span class="pgcssp">())</span> <span class="pgcssk">for</span> <span class="pgcssn">p</span> <span class="pgcssow">in</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">params</span><span class="pgcssp">])</span>
 <span class="pgcssk">print</span><span class="pgcssp">(</span><span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">count_params</span><span class="pgcssp">())</span>
 </pre></div>
-</td></tr></table><pre class="literal-block">
+<pre class="literal-block">
 &lt;CudaNdarrayType(float32, matrix)&gt;
 [10, 10, 10, 1]
 31
 </pre>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">time</span> <span class="pgcsso">=</span> <span class="pgcssp">(</span><span class="pgcssn">time</span> <span class="pgcsso">-</span> <span class="pgcssn">time</span><span class="pgcsso">.</span><span class="pgcssn">mean</span><span class="pgcssp">())</span><span class="pgcsso">/</span><span class="pgcssn">time</span><span class="pgcsso">.</span><span class="pgcssn">std</span><span class="pgcssp">()</span>
+<div class="highlight"><pre><span class="pgcssn">time</span> <span class="pgcsso">=</span> <span class="pgcssp">(</span><span class="pgcssn">time</span> <span class="pgcsso">-</span> <span class="pgcssn">time</span><span class="pgcsso">.</span><span class="pgcssn">mean</span><span class="pgcssp">())</span><span class="pgcsso">/</span><span class="pgcssn">time</span><span class="pgcsso">.</span><span class="pgcssn">std</span><span class="pgcssp">()</span>
 <span class="pgcssn">history</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">fit</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">time</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">,</span><span class="pgcssbp">None</span><span class="pgcssp">],</span> <span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">y_t</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">]},</span>
           <span class="pgcssn">validation_data</span><span class="pgcsso">=</span><span class="pgcssp">{</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span><span class="pgcssn">time</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:,</span> <span class="pgcssbp">None</span><span class="pgcssp">],</span> <span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">y_t</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:]},</span>
           <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">32</span><span class="pgcssp">,</span>
           <span class="pgcssn">nb_epoch</span><span class="pgcsso">=</span><span class="pgcssmi">15</span><span class="pgcssp">)</span>
 </pre></div>
-</td></tr></table><pre class="literal-block">
+<pre class="literal-block">
 Train on 70000 samples, validate on 30000 samples
 Epoch 1/15
 70000/70000 [==============================] - 2s - loss: 135.5583 - val_loss: 21.2578
@@ -285,23 +249,11 @@ Epoch 14/15
 Epoch 15/15
 70000/70000 [==============================] - 2s - loss: 1.0196 - val_loss: 4.2425
 </pre>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">plot</span><span class="pgcssp">(</span><span class="pgcssn">history</span><span class="pgcsso">.</span><span class="pgcssn">history</span><span class="pgcssp">[</span><span class="pgcsss">&quot;val_loss&quot;</span><span class="pgcssp">])</span>
+<div class="highlight"><pre><span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">plot</span><span class="pgcssp">(</span><span class="pgcssn">history</span><span class="pgcsso">.</span><span class="pgcssn">history</span><span class="pgcssp">[</span><span class="pgcsss">&quot;val_loss&quot;</span><span class="pgcssp">])</span>
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">show</span><span class="pgcssp">()</span>
 </pre></div>
-</td></tr></table><img alt="" src="../../images/nnpart1_files/nnpart1_13_0.png" />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">predictions_oos</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">predict</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">time</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:,</span><span class="pgcssbp">None</span><span class="pgcssp">]},</span> <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">128</span><span class="pgcssp">)</span>
+<img alt="" src="../../images/nnpart1_files/nnpart1_13_0.png" />
+<div class="highlight"><pre><span class="pgcssn">predictions_oos</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">predict</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">time</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:,</span><span class="pgcssbp">None</span><span class="pgcssp">]},</span> <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">128</span><span class="pgcssp">)</span>
 <span class="pgcssn">predictions_is</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">predict</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">time</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">,</span><span class="pgcssbp">None</span><span class="pgcssp">]},</span> <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">128</span><span class="pgcssp">)</span>
 <span class="pgcssn">predictionsg_oos</span> <span class="pgcsso">=</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">concatenate</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">array</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">nan</span> <span class="pgcssk">for</span> <span class="pgcssn">el</span> <span class="pgcssow">in</span> <span class="pgcssnb">range</span><span class="pgcssp">(</span><span class="pgcssmi">70000</span><span class="pgcssp">)]),</span> <span class="pgcssn">predictions_oos</span><span class="pgcssp">[</span><span class="pgcsss">&quot;output&quot;</span><span class="pgcssp">]</span><span class="pgcsso">.</span><span class="pgcssn">flatten</span><span class="pgcssp">()])</span>
 <span class="pgcssn">predictionsg_is</span> <span class="pgcsso">=</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">concatenate</span><span class="pgcssp">([</span><span class="pgcssn">predictions_is</span><span class="pgcssp">[</span><span class="pgcsss">&quot;output&quot;</span><span class="pgcssp">]</span><span class="pgcsso">.</span><span class="pgcssn">flatten</span><span class="pgcssp">(),</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">array</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">nan</span> <span class="pgcssk">for</span> <span class="pgcssn">el</span> <span class="pgcssow">in</span> <span class="pgcssnb">range</span><span class="pgcssp">(</span><span class="pgcssmi">30000</span><span class="pgcssp">)])])</span>
@@ -314,7 +266,7 @@ Epoch 15/15
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">legend</span><span class="pgcssp">()</span>
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">show</span><span class="pgcssp">()</span>
 </pre></div>
-</td></tr></table><pre class="literal-block">
+<pre class="literal-block">
 1.06712052617
 </pre>
 <img alt="" src="../../images/nnpart1_files/nnpart1_14_1.png" />
@@ -322,16 +274,7 @@ Epoch 15/15
 is not crazy. Let's add some regularization on the parameters of the
 last layer. We choose a L1 regularization to have a sparse structure in
 the model. TODO REF</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcsskn">from</span> <span class="pgcssnn">keras.regularizers</span> <span class="pgcsskn">import</span> <span class="pgcssn">l1l2</span><span class="pgcssp">,</span> <span class="pgcssn">l1</span>
+<div class="highlight"><pre><span class="pgcsskn">from</span> <span class="pgcssnn">keras.regularizers</span> <span class="pgcsskn">import</span> <span class="pgcssn">l1l2</span><span class="pgcssp">,</span> <span class="pgcssn">l1</span>
 
 <span class="pgcssn">model</span> <span class="pgcsso">=</span> <span class="pgcssn">Graph</span><span class="pgcssp">()</span>
 <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">add_input</span><span class="pgcssp">(</span><span class="pgcssn">name</span><span class="pgcsso">=</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">,</span> <span class="pgcssn">input_shape</span><span class="pgcsso">=</span><span class="pgcssp">(</span><span class="pgcssmi">1</span><span class="pgcssp">,))</span>
@@ -342,15 +285,12 @@ the model. TODO REF</p>
 
 <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">compile</span><span class="pgcssp">(</span><span class="pgcssn">optimizer</span><span class="pgcsso">=</span><span class="pgcssn">adam</span><span class="pgcssp">,</span> <span class="pgcssn">loss</span><span class="pgcsso">=</span><span class="pgcssp">{</span><span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span><span class="pgcsss">&#39;mse&#39;</span><span class="pgcssp">})</span>
 </pre></div>
-</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">history</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">fit</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">time</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">,</span><span class="pgcssbp">None</span><span class="pgcssp">],</span> <span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">y_t</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">]},</span>
+<div class="highlight"><pre><span class="pgcssn">history</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">fit</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">time</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">,</span><span class="pgcssbp">None</span><span class="pgcssp">],</span> <span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">y_t</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">]},</span>
           <span class="pgcssn">validation_data</span><span class="pgcsso">=</span><span class="pgcssp">{</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span><span class="pgcssn">time</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:,</span> <span class="pgcssbp">None</span><span class="pgcssp">],</span> <span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">y_t</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:]},</span>
           <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">32</span><span class="pgcssp">,</span>
           <span class="pgcssn">nb_epoch</span><span class="pgcsso">=</span><span class="pgcssmi">15</span><span class="pgcssp">)</span>
 </pre></div>
-</td></tr></table><pre class="literal-block">
+<pre class="literal-block">
 Train on 70000 samples, validate on 30000 samples
 Epoch 1/15
 70000/70000 [==============================] - 3s - loss: 136.6215 - val_loss: 22.1850
@@ -383,23 +323,11 @@ Epoch 14/15
 Epoch 15/15
 70000/70000 [==============================] - 3s - loss: 1.1203 - val_loss: 1.7094
 </pre>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">plot</span><span class="pgcssp">(</span><span class="pgcssn">history</span><span class="pgcsso">.</span><span class="pgcssn">history</span><span class="pgcssp">[</span><span class="pgcsss">&quot;val_loss&quot;</span><span class="pgcssp">])</span>
+<div class="highlight"><pre><span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">plot</span><span class="pgcssp">(</span><span class="pgcssn">history</span><span class="pgcsso">.</span><span class="pgcssn">history</span><span class="pgcssp">[</span><span class="pgcsss">&quot;val_loss&quot;</span><span class="pgcssp">])</span>
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">show</span><span class="pgcssp">()</span>
 </pre></div>
-</td></tr></table><img alt="" src="../../images/nnpart1_files/nnpart1_18_0.png" />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">predictions_oos</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">predict</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">time</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:,</span><span class="pgcssbp">None</span><span class="pgcssp">]},</span> <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">128</span><span class="pgcssp">)</span>
+<img alt="" src="../../images/nnpart1_files/nnpart1_18_0.png" />
+<div class="highlight"><pre><span class="pgcssn">predictions_oos</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">predict</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">time</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:,</span><span class="pgcssbp">None</span><span class="pgcssp">]},</span> <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">128</span><span class="pgcssp">)</span>
 <span class="pgcssn">predictions_is</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">predict</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">time</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">,</span><span class="pgcssbp">None</span><span class="pgcssp">]},</span> <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">128</span><span class="pgcssp">)</span>
 <span class="pgcssn">predictionsg_oos</span> <span class="pgcsso">=</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">concatenate</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">array</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">nan</span> <span class="pgcssk">for</span> <span class="pgcssn">el</span> <span class="pgcssow">in</span> <span class="pgcssnb">range</span><span class="pgcssp">(</span><span class="pgcssmi">70000</span><span class="pgcssp">)]),</span> <span class="pgcssn">predictions_oos</span><span class="pgcssp">[</span><span class="pgcsss">&quot;output&quot;</span><span class="pgcssp">]</span><span class="pgcsso">.</span><span class="pgcssn">flatten</span><span class="pgcssp">()])</span>
 <span class="pgcssn">predictionsg_is</span> <span class="pgcsso">=</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">concatenate</span><span class="pgcssp">([</span><span class="pgcssn">predictions_is</span><span class="pgcssp">[</span><span class="pgcsss">&quot;output&quot;</span><span class="pgcssp">]</span><span class="pgcsso">.</span><span class="pgcssn">flatten</span><span class="pgcssp">(),</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">array</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">nan</span> <span class="pgcssk">for</span> <span class="pgcssn">el</span> <span class="pgcssow">in</span> <span class="pgcssnb">range</span><span class="pgcssp">(</span><span class="pgcssmi">30000</span><span class="pgcssp">)])])</span>
@@ -412,7 +340,7 @@ Epoch 15/15
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">legend</span><span class="pgcssp">()</span>
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">show</span><span class="pgcssp">()</span>
 </pre></div>
-</td></tr></table><pre class="literal-block">
+<pre class="literal-block">
 1.06712052617
 </pre>
 <img alt="" src="../../images/nnpart1_files/nnpart1_19_1.png" />
@@ -423,13 +351,7 @@ quadratic trend with more accuracy.</p>
 <p>Because we have seasonnality in our data we could try to use lags of the
 time series to capture the recurrent patterns we see.</p>
 <p>To do so, we crop some patches out of our time series.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcsskn">from</span> <span class="pgcssnn">sklearn.feature_extraction.image</span> <span class="pgcsskn">import</span> <span class="pgcssn">extract_patches_2d</span>
+<div class="highlight"><pre><span class="pgcsskn">from</span> <span class="pgcssnn">sklearn.feature_extraction.image</span> <span class="pgcsskn">import</span> <span class="pgcssn">extract_patches_2d</span>
 
 <span class="pgcssn">len_ts_y</span> <span class="pgcsso">=</span> <span class="pgcssmi">60</span>
 
@@ -437,21 +359,14 @@ time series to capture the recurrent patterns we see.</p>
 <span class="pgcssn">y_train</span> <span class="pgcsso">=</span> <span class="pgcssn">data_patched</span><span class="pgcssp">[:,</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">,</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">]</span>
 <span class="pgcssn">endog_train</span> <span class="pgcsso">=</span> <span class="pgcssn">data_patched</span><span class="pgcssp">[:,</span><span class="pgcsso">-</span><span class="pgcssn">len_ts_y</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">:</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">,</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">]</span>
 </pre></div>
-</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">endog_train</span><span class="pgcsso">.</span><span class="pgcssn">shape</span>
+<div class="highlight"><pre><span class="pgcssn">endog_train</span><span class="pgcsso">.</span><span class="pgcssn">shape</span>
 </pre></div>
-</td></tr></table><pre class="literal-block">
+<pre class="literal-block">
 (99941, 59)
 </pre>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">endog_train</span> <span class="pgcsso">=</span> <span class="pgcssp">(</span><span class="pgcssn">endog_train</span><span class="pgcsso">-</span><span class="pgcssn">endog_train</span><span class="pgcsso">.</span><span class="pgcssn">mean</span><span class="pgcssp">(</span><span class="pgcssn">axis</span><span class="pgcsso">=</span><span class="pgcssmi">0</span><span class="pgcssp">))</span><span class="pgcsso">/</span><span class="pgcssn">endog_train</span><span class="pgcsso">.</span><span class="pgcssn">std</span><span class="pgcssp">(</span><span class="pgcssn">axis</span><span class="pgcsso">=</span><span class="pgcssmi">0</span><span class="pgcssp">)</span>
+<div class="highlight"><pre><span class="pgcssn">endog_train</span> <span class="pgcsso">=</span> <span class="pgcssp">(</span><span class="pgcssn">endog_train</span><span class="pgcsso">-</span><span class="pgcssn">endog_train</span><span class="pgcsso">.</span><span class="pgcssn">mean</span><span class="pgcssp">(</span><span class="pgcssn">axis</span><span class="pgcsso">=</span><span class="pgcssmi">0</span><span class="pgcssp">))</span><span class="pgcsso">/</span><span class="pgcssn">endog_train</span><span class="pgcsso">.</span><span class="pgcssn">std</span><span class="pgcssp">(</span><span class="pgcssn">axis</span><span class="pgcsso">=</span><span class="pgcssmi">0</span><span class="pgcssp">)</span>
 </pre></div>
-</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">model</span> <span class="pgcsso">=</span> <span class="pgcssn">Graph</span><span class="pgcssp">()</span>
+<div class="highlight"><pre><span class="pgcssn">model</span> <span class="pgcsso">=</span> <span class="pgcssn">Graph</span><span class="pgcssp">()</span>
 <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">add_input</span><span class="pgcssp">(</span><span class="pgcssn">name</span><span class="pgcsso">=</span><span class="pgcsss">&#39;endog&#39;</span><span class="pgcssp">,</span> <span class="pgcssn">input_shape</span><span class="pgcsso">=</span><span class="pgcssp">(</span><span class="pgcssmi">59</span><span class="pgcssp">,))</span>
 <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">add_node</span><span class="pgcssp">(</span><span class="pgcssn">Dense</span><span class="pgcssp">(</span><span class="pgcssmi">10</span><span class="pgcssp">,</span> <span class="pgcssn">activation</span><span class="pgcsso">=</span><span class="pgcsss">&quot;sigmoid&quot;</span><span class="pgcssp">),</span> <span class="pgcssn">name</span><span class="pgcsso">=</span><span class="pgcsss">&#39;dense1&#39;</span><span class="pgcssp">,</span> <span class="pgcssnb">input</span><span class="pgcsso">=</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">)</span>
 <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">add_node</span><span class="pgcssp">(</span><span class="pgcssn">Dense</span><span class="pgcssp">(</span><span class="pgcssmi">1</span><span class="pgcssp">,</span> <span class="pgcssn">activation</span><span class="pgcsso">=</span><span class="pgcsss">&quot;linear&quot;</span><span class="pgcssp">),</span> <span class="pgcssn">name</span><span class="pgcsso">=</span><span class="pgcsss">&#39;last_dense&#39;</span><span class="pgcssp">,</span> <span class="pgcssnb">input</span><span class="pgcsso">=</span><span class="pgcsss">&#39;dense1&#39;</span><span class="pgcssp">)</span>
@@ -460,15 +375,12 @@ time series to capture the recurrent patterns we see.</p>
 
 <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">compile</span><span class="pgcssp">(</span><span class="pgcssn">optimizer</span><span class="pgcsso">=</span><span class="pgcssn">adam</span><span class="pgcssp">,</span> <span class="pgcssn">loss</span><span class="pgcsso">=</span><span class="pgcssp">{</span><span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span><span class="pgcsss">&#39;mse&#39;</span><span class="pgcssp">})</span>
 </pre></div>
-</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">history</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">fit</span><span class="pgcssp">({</span><span class="pgcsss">&#39;endog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">endog_train</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">]</span><span class="pgcsso">.</span><span class="pgcssn">reshape</span><span class="pgcssp">(</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">,</span><span class="pgcssmi">59</span><span class="pgcssp">),</span> <span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">y_t</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">]},</span>
+<div class="highlight"><pre><span class="pgcssn">history</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">fit</span><span class="pgcssp">({</span><span class="pgcsss">&#39;endog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">endog_train</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">]</span><span class="pgcsso">.</span><span class="pgcssn">reshape</span><span class="pgcssp">(</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">,</span><span class="pgcssmi">59</span><span class="pgcssp">),</span> <span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">y_t</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">]},</span>
           <span class="pgcssn">validation_data</span><span class="pgcsso">=</span><span class="pgcssp">{</span><span class="pgcsss">&#39;endog&#39;</span><span class="pgcssp">:</span><span class="pgcssn">endog_train</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:]</span><span class="pgcsso">.</span><span class="pgcssn">reshape</span><span class="pgcssp">(</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">,</span><span class="pgcssmi">59</span><span class="pgcssp">),</span> <span class="pgcsss">&#39;output&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">y_t</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:]},</span>
           <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">32</span><span class="pgcssp">,</span>
           <span class="pgcssn">nb_epoch</span><span class="pgcsso">=</span><span class="pgcssmi">15</span><span class="pgcssp">)</span>
 </pre></div>
-</td></tr></table><pre class="literal-block">
+<pre class="literal-block">
 Train on 69941 samples, validate on 30000 samples
 Epoch 1/15
 69941/69941 [==============================] - 3s - loss: 982.9619 - val_loss: 1247.8897
@@ -501,18 +413,7 @@ Epoch 14/15
 Epoch 15/15
 69941/69941 [==============================] - 2s - loss: 0.0005 - val_loss: 1.2757
 </pre>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span class="pgcssn">predictions_oos</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">predict</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">endog_train</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:]</span><span class="pgcsso">.</span><span class="pgcssn">reshape</span><span class="pgcssp">(</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">,</span><span class="pgcssmi">59</span><span class="pgcssp">)},</span> <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">128</span><span class="pgcssp">)</span>
+<div class="highlight"><pre><span class="pgcssn">predictions_oos</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">predict</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">endog_train</span><span class="pgcssp">[</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">:]</span><span class="pgcsso">.</span><span class="pgcssn">reshape</span><span class="pgcssp">(</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">,</span><span class="pgcssmi">59</span><span class="pgcssp">)},</span> <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">128</span><span class="pgcssp">)</span>
 <span class="pgcssn">predictions_is</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">predict</span><span class="pgcssp">({</span><span class="pgcsss">&#39;exog&#39;</span><span class="pgcssp">:</span> <span class="pgcssn">endog_train</span><span class="pgcssp">[:</span><span class="pgcsso">-</span><span class="pgcssmi">30000</span><span class="pgcssp">]</span><span class="pgcsso">.</span><span class="pgcssn">reshape</span><span class="pgcssp">(</span><span class="pgcsso">-</span><span class="pgcssmi">1</span><span class="pgcssp">,</span><span class="pgcssmi">59</span><span class="pgcssp">)},</span> <span class="pgcssn">batch_size</span><span class="pgcsso">=</span><span class="pgcssmi">128</span><span class="pgcssp">)</span>
 <span class="pgcssn">predictionsg_oos</span> <span class="pgcsso">=</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">concatenate</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">array</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">nan</span> <span class="pgcssk">for</span> <span class="pgcssn">el</span> <span class="pgcssow">in</span> <span class="pgcssnb">range</span><span class="pgcssp">(</span><span class="pgcssmi">70000</span><span class="pgcssp">)]),</span> <span class="pgcssn">predictions_oos</span><span class="pgcssp">[</span><span class="pgcsss">&quot;output&quot;</span><span class="pgcssp">]</span><span class="pgcsso">.</span><span class="pgcssn">flatten</span><span class="pgcssp">()])</span>
 <span class="pgcssn">predictionsg_is</span> <span class="pgcsso">=</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">concatenate</span><span class="pgcssp">([</span><span class="pgcssn">predictions_is</span><span class="pgcssp">[</span><span class="pgcsss">&quot;output&quot;</span><span class="pgcssp">]</span><span class="pgcsso">.</span><span class="pgcssn">flatten</span><span class="pgcssp">(),</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">array</span><span class="pgcssp">([</span><span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">nan</span> <span class="pgcssk">for</span> <span class="pgcssn">el</span> <span class="pgcssow">in</span> <span class="pgcssnb">range</span><span class="pgcssp">(</span><span class="pgcssmi">30000</span><span class="pgcssp">)])])</span>
@@ -525,7 +426,7 @@ Epoch 15/15
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">legend</span><span class="pgcssp">()</span>
 <span class="pgcssn">plt</span><span class="pgcsso">.</span><span class="pgcssn">show</span><span class="pgcssp">()</span>
 </pre></div>
-</td></tr></table><pre class="literal-block">
+<pre class="literal-block">
 0.818090224748
 </pre>
 <img alt="" src="../../images/nnpart1_files/nnpart1_29_1.png" />
