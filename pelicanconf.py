@@ -12,10 +12,10 @@ TIMEZONE = 'America/Montreal'
 DEFAULT_LANG = u'en'
 
 # ipynb setup
-# MARKUP = ['md', 'ipynb']
+MARKUP = ['md', 'ipynb']
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['render_math']
+PLUGINS = ['render_math', 'ipynb']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
