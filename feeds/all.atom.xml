@@ -13,6 +13,8 @@ y_t = \sin(\pi\frac{x_t}{800})
 \end{equation*}
 &lt;/div&gt;
 &lt;p&gt;We can easily generate this data with numpy:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="pgcssk"&gt;print&lt;/span&gt;&lt;span class="pgcssp"&gt;(&lt;/span&gt;&lt;span class="pgcsss"&gt;&amp;quot;Pelican is a static site generator.&amp;quot;&lt;/span&gt;&lt;span class="pgcssp"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="pgcsskn"&gt;import&lt;/span&gt; &lt;span class="pgcssnn"&gt;numpy&lt;/span&gt; &lt;span class="pgcsskn"&gt;as&lt;/span&gt; &lt;span class="pgcssnn"&gt;np&lt;/span&gt;
 &lt;span class="pgcssn"&gt;np&lt;/span&gt;&lt;span class="pgcsso"&gt;.&lt;/span&gt;&lt;span class="pgcssn"&gt;random&lt;/span&gt;&lt;span class="pgcsso"&gt;.&lt;/span&gt;&lt;span class="pgcssn"&gt;seed&lt;/span&gt;&lt;span class="pgcssp"&gt;(&lt;/span&gt;&lt;span class="pgcssmi"&gt;1337&lt;/span&gt;&lt;span class="pgcssp"&gt;)&lt;/span&gt;
 
