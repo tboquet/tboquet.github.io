@@ -32,8 +32,8 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          )
 
 # Social widget
-SOCIAL = (('Linkedin Profile', 'https://ca.linkedin.com/in/tboquet'),
-          ('Twitter Profile', 'https://twitter.com/thomasboquet'),
+SOCIAL = (('Linkedin', 'https://ca.linkedin.com/in/tboquet'),
+          ('Twitter', 'https://twitter.com/thomasboquet'),
           ('github', 'https://github.com/tboquet/'))
 
 DEFAULT_PAGINATION = 5
