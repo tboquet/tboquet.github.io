@@ -18,7 +18,7 @@ Networks.
 We will try to predict time series (continuous signals) using simple
 architectures.
 
-The notation used are taken from the `best introduction` to neural networks I've found from Hugo
+The notation used are taken from the `best introduction`_ to neural networks I've found from Hugo
 Larochelle.
 
 Suppose that we want to study a time series following this process:
@@ -57,8 +57,10 @@ Graphically we have a nice sinusoidal function:
 .. image:: ../../images/nnpart1_files/nnpart1_6_0.png
 
 
-Observations : 1. it's a nonlinear process 2. it's not stationary
-because we see big cycles and seasonnality 3. it's strictly positive
+Observations :
+1. it's a nonlinear process
+2. it's not stationary because we see big cycles and seasonnality
+3. it's strictly positive
 
 Let's try a simple neural net with a single hidden layer on this data.
 
