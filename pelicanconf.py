@@ -33,7 +33,8 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 
 # Social widget
 SOCIAL = (('Linkedin Profile', 'https://ca.linkedin.com/in/tboquet'),
-          ('Twitter Profile', 'https://twitter.com/thomasboquet'),)
+          ('Twitter Profile', 'https://twitter.com/thomasboquet'),
+          ('github', 'https://github.com/tboquet/'))
 
 DEFAULT_PAGINATION = 5
 
@@ -51,5 +52,6 @@ SITELOGO_SIZE = 24
 BANNER = "images/bandcut2.jpg"
 BANNER_SUBTITLE = "Data Science & Machine Learning with paper clips"
 BANNER_ALL_PAGES = False
+SHOW_DATE_MODIFIED = True
 # ABOUT_ME = "Data Scientist at R2, juggling with machine learning and statistical tools in Python and R to tackle business challenges."
 # AVATAR = "images/profile.jpg"
