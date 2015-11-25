@@ -113,8 +113,7 @@
 Networks.</p>
 <p>We will try to predict time series (continuous signals) using simple
 architectures.</p>
-<p>The notation used are taken from the <a class="reference external" href="https://www.youtube.com/playlist?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH">best introduction</a> to neural networks I've found from Hugo
-Larochelle.</p>
+<p>The notation used are taken from the <a class="reference external" href="https://www.youtube.com/playlist?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH">best introduction</a> to neural networks I've found from Hugo Larochelle.</p>
 <p>Suppose that we want to study a time series following this process:</p>
 <div class="math">
 \begin{equation*}
@@ -144,10 +143,12 @@ y_t = \sin(\pi\frac{x_t}{800})
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre>
 <img alt="" src="../../images/nnpart1_files/nnpart1_6_0.png" />
-<p>Observations :
-1. it's a nonlinear process
-2. it's not stationary because we see big cycles and seasonnality
-3. it's strictly positive</p>
+<p>Observations :</p>
+<ol class="arabic simple">
+<li>it's a nonlinear process</li>
+<li>it's not stationary because we see big cycles and seasonnality</li>
+<li>it's strictly positive</li>
+</ol>
 <p>Let's try a simple neural net with a single hidden layer on this data.</p>
 <p>let <span class="math">\(y_t\)</span> be the value of the signal at time
 <span class="math">\(t=1,\dots, 100000\)</span></p>
