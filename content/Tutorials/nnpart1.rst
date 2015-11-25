@@ -30,11 +30,6 @@ We can easily generate this data with numpy:
 
 .. code-block:: python
 
-   print("Pelican is a static site generator.")
-
-             
-.. code-block:: python
-
     import numpy as np
     np.random.seed(1337)
     
