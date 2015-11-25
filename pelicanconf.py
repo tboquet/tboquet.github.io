@@ -14,7 +14,7 @@ DEFAULT_LANG = u'en'
 # ipynb setup
 # MARKUP = ['md', 'ipynb']
 
-PLUGIN_PATHS = './plugins'
+PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['render_math']
 
 # Feed generation is usually not desired when developing
@@ -38,6 +38,7 @@ DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = False
+PYGMENTS_STYLE = 'monokai'
 PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}
 THEME = "../pelican-themes/pelican-bootstrap3/"
 BOOTSTRAP_THEME = "cosmo"
