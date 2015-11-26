@@ -37,7 +37,12 @@ SOCIAL = (('Linkedin', 'https://ca.linkedin.com/in/tboquet'),
           ('github', 'https://github.com/tboquet/'))
 
 DEFAULT_PAGINATION = 5
-
+ADDTHIS_PROFILE = "ra-56576a95c573c6a9"
+ADDTHIS_DATA_TRACK_ADDRESSBAR = True
+ADDTHIS_FACEBOOK_LIKE = True
+ADDTHIS_TWEET = True
+OPEN_GRAPH_IMAGE = "images/bandcut2.jpg"
+OPEN_GRAPH_FB_APP_ID = '457522324431057'
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = False
 PYGMENTS_STYLE = 'emacs'
