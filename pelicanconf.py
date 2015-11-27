@@ -15,7 +15,10 @@ DEFAULT_LANG = u'en'
 MARKUP = ['md', 'ipynb']
 IPYNB_USE_META_SUMMARY = True
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['render_math', 'ipynb']
+PLUGINS = ['render_math',
+           'ipynb',
+           #'liquid_tags.notebook'
+          ]
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
