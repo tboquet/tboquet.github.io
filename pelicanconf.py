@@ -35,7 +35,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (('Linkedin', 'https://ca.linkedin.com/in/tboquet'),
           ('Twitter', 'https://twitter.com/thomasboquet'),
           ('github', 'https://github.com/tboquet/'))
-
+FAVICON = 'images/paperclip.png'
 DEFAULT_PAGINATION = 5
 ADDTHIS_PROFILE = "ra-56576a95c573c6a9"
 ADDTHIS_DATA_TRACK_ADDRESSBAR = True
