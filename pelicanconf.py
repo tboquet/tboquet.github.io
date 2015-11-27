@@ -27,7 +27,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 MD_EXTENSIONS = ['codehilite(css_class=highlight)']
-
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
+DISPLAY_CATEGORIES_ON_SIDEBAR = True
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
