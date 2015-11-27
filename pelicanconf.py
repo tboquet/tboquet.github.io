@@ -41,7 +41,7 @@ ADDTHIS_PROFILE = "ra-56576a95c573c6a9"
 ADDTHIS_DATA_TRACK_ADDRESSBAR = True
 ADDTHIS_FACEBOOK_LIKE = True
 ADDTHIS_TWEET = True
-OPEN_GRAPH_IMAGE = "https://github.com/tboquet.github.io/content/images/mcplaceholdermin.jpg"
+OPEN_GRAPH_IMAGE = "https://raw.githubusercontent.com/tboquet.github.io/content/images/mcplaceholdermin.jpg"
 OPEN_GRAPH_FB_APP_ID = '457522324431057'
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = False
