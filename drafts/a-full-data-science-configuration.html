@@ -118,112 +118,67 @@
 <h2>Introduction</h2>
 <p>Machine learning and data science are moving fast because we have more data and more opportunities to extract value from it. Researchers in the industry and the academia are finding new solutions to theoritical and applied problems <a class="reference external" href="http://arxiv.org/">every day</a>.</p>
 <img alt="Pelican" src="https://avatars0.githubusercontent.com/u/2043492?v=3&amp;s=200" style="height: 100px;" />
-<p>This technological ecosystem needs flexible and open source tools to evolve quickly with the help of a big community and we will see how we could follow this trend using the right software setup. This could be really important if you want to be efficient on some complex problems.</p>
+<p>This technological ecosystem needs flexible and open source tools to evolve quickly with the help of a big community and we will see how we could follow this trend using the right software setup. This could be really important if you want to be efficient on complex (and even simple) problems.</p>
 <div class="section" id="os-choice">
 <h3>OS choice</h3>
-<p>I use the 14.04.3 LTS (Long Term Support) Ubuntu version because a lot of people use it. When a lot of people are using a tool, you are sure to have a lot of answers to your questions on forums and in tutorials. That's a really good thing when you want to learn by yourself.</p>
+<p>I use the 14.04.3 LTS (Long Term Support) Ubuntu version because it's the most popular. When a lot of people are using a tool, you are sure to have a lot of answers to your questions on forums and in tutorials. That's a really good thing when you want to learn by yourself.</p>
 <p>A lot of big data, data science, machine learning (call them what you want) are also using Ubuntu and it makes it one of the OS of choice when moving from a user point of vue to a developer point of vue.</p>
+<p>Because we will use Docker and a realease is coming on Windows and OSX we will see that you don't need to install it on your hard drive.</p>
 </div>
 <div class="section" id="programming-languages-and-tools">
 <h3>Programming languages and tools</h3>
-<p>In this tutorial, we will use Python and R. When we say use, it's more like writing Python and R calling some low level compiled C, C++ or Fortran libraries.</p>
+<p>The languages to work with data that you will see the most right now are Python and R. First, it's important to mention that these 2 languages are powerfull thanks to their very good package management systems and the community that supports all of these open source tools. Then, it's worth mentionning that a lot of packages are wrappers around C, C++, fortran or other languages softwares. It's an important point because these Python packages have to access compiled code or compile the code before they can be used.</p>
+<p>This requirement leads to a lot of troubles with dependencies and compilers.</p>
+<p>For this reason, Anaconda is a good point to start installing easily already compiled packages.</p>
+<p>My choice is to use Docker containers to always have a clean environment for my different projects.
+This makes the need to install an eavy configuration on another computer or a server disapear.
+With a well designed container, you just have to download it, run it and launch a Jupyter notebook to be ready to code.</p>
+</div>
+</div>
+<div class="section" id="wrap-up">
+<h2>Wrap up:</h2>
 <p><strong>Why use Python?</strong></p>
 <ol class="arabic simple">
-<li>It's a <strong>beautiful</strong> and <strong>simple</strong> language</li>
-<li>It forces you to use a specific indentation and it's good in a <strong>learning phase</strong> and to write <strong>reusable code</strong></li>
+<li>It's an <strong>easy to read</strong> and <strong>simple</strong> language</li>
+<li>The syntax forces you to follow an interesting style</li>
 <li>You could find a library that does <strong>exactly what you want</strong></li>
 <li>The machine learning community is <strong>using it extensively</strong></li>
 <li>The web developers community is <strong>using it a lot too</strong></li>
-<li>You have a Python community in each major city in the world!</li>
+<li>You have a Python community in each major city in the world</li>
 <li>You could build a <strong>whole analytic pipeline</strong> only using Python</li>
+<li>A lot of automation platforms support Python</li>
 </ol>
 <p><strong>Why use R?</strong></p>
 <ol class="arabic simple">
 <li>It's the language used by a lot of <strong>statisticians</strong></li>
-<li><a class="reference external" href="http://had.co.nz/">Hadley Wickham</a> (Yeah, this guy)</li>
+<li><a class="reference external" href="http://had.co.nz/">Hadley Wickham</a></li>
 <li>It's <strong>really quick</strong> to do some <strong>simple stuffs</strong></li>
-<li>Even if you like Python so much, some packages are <strong>1000 times more efficient in R</strong> (because it involves a lot more C, C++ and Fortran)</li>
+<li>Even if you like Python a lot, some packages are <strong>more efficient in R</strong></li>
 <li>You will see a lot of <strong>MOOC</strong> using R making it <strong>easy to learn</strong></li>
+</ol>
+<p><strong>Why use Docker</strong></p>
+<ol class="arabic simple">
+<li>Each time you rebuild a container, you have a clean configuration.</li>
+<li>It's portable if you use a container located on Docker hub.</li>
+<li>You can setup a new computer or server having Docker installed in 3 lines of code.</li>
+<li>Much more complex setups could be built with Docker</li>
 </ol>
 <p>Other stuffs:</p>
 <ul class="simple">
-<li>SAS it's old, it's <em>not flexible</em>, it's used by banks and big corporations and <strong>IT'S NOT FREE</strong></li>
+<li>SAS: it's old, it's <em>not flexible</em>, it's used by banks and big corporations and <strong>IT'S NOT FREE</strong></li>
 <li>SPSS: same thing, but used in marketing</li>
 </ul>
-</div>
 <div class="section" id="text-editors">
 <h3>Text editors</h3>
 <p>You have several good text editors and you should take a look at:</p>
 <ul class="simple">
-<li>emacs (hipster, old school #1)</li>
-<li>sublime text (hipster, mad jojo #2)</li>
-<li>vim (old school, super hero #3)</li>
-<li>atom (fairly new, it seems nice)</li>
+<li>emacs</li>
+<li>sublime text</li>
+<li>vim</li>
+<li>atom</li>
 </ul>
-<p>I used sublime text a lot and it's a really good editor to start with. Emacs is now my favorite, due to it's awesome features (again, it's really hipster). You could also emulate vim behavior in emacs to become a superpowered old school hipster.</p>
+<p>I have used sublime text a lot and it's a really good editor to start with. The Spacemacs distribution of Emacs is now my favorite because it can emulate vim's behaviour.</p>
 </div>
-<div class="section" id="utilies-and-system-libraries">
-<h3>Utilies and system libraries</h3>
-<p>git, htop, compilers, BLAS</p>
-<p>To be able to install, download and do some fancy stuffs, we need packages. To install a package, you could use the magic <cite>sudo apt-get install name-of-your-awesome-package</cite> like this:</p>
-<p><tt class="docutils literal">`bash
-sudo <span class="pre">apt-get</span> install htop
-`</tt>
-Ubuntu will ask you if you are sure you want to install it, we love htop so hit <cite>y</cite> and <cite>RET</cite> (return).
-After you get back the control of your terminal, we can verify that the program is working:</p>
-<p><tt class="docutils literal">`bash
-htop
-`</tt></p>
-<img alt="Pelican" src="https://avatars0.githubusercontent.com/u/2043492?v=3&amp;s=200" style="height: 100px;" />
-<p>Nice! If you are in a cafe, you look like a real baddass programmer.</p>
-<img alt="Pelican" src="https://avatars0.githubusercontent.com/u/2043492?v=3&amp;s=200" style="height: 100px;" />
-<p>For some packages we need to tell Ubuntu where to search for it on the internet. Ubuntu has some repositories from which it downloads source files from. You just have to add the adresses to search for these pieces of software to download, update and upgrade them.</p>
-<p>For this, you need to <cite>TODO ppa</cite></p>
-</div>
-<div class="section" id="zsh">
-<h3>ZSH</h3>
-<p>The command line tool you need. <cite>sudo apt-get</cite> it:</p>
-<p><tt class="docutils literal">`bash
-sudo <span class="pre">apt-get</span> zsh
-`</tt>
-and <cite>git clone</cite> the awesome <em>oh-my-zsh</em> custom config:</p>
-<p><tt class="docutils literal">`bash
-git clone TODO
-`</tt></p>
-<p>After that, you will be able to select an awesome theme. Change it in your .zshrc config that you could find in your <cite>/home</cite> directory (<cite>~/</cite>).</p>
-</div>
-<div class="section" id="emacs-spacemacs">
-<h3>Emacs (+ spacemacs)</h3>
-<p>You want to know more about emacs, it's a whole world, and you could go there.</p>
-</div>
-</div>
-<div class="section" id="python">
-<h2>Python</h2>
-<div class="section" id="python-distribution">
-<h3>Python distribution</h3>
-</div>
-<div class="section" id="python-packages">
-<h3>Python packages</h3>
-</div>
-</div>
-<div class="section" id="r">
-<h2>R</h2>
-<div class="section" id="r-distribution">
-<h3>R distribution</h3>
-</div>
-<div class="section" id="r-packages">
-<h3>R packages</h3>
-</div>
-</div>
-<div class="section" id="conclusion">
-<h2>Conclusion</h2>
-<!-- _ -->
-<!-- _ -->
-<!-- _ -->
-<!-- _ -->
-<!-- _ -->
-<!-- _ -->
-<!-- _ -->
 </div>
 
             </div>
