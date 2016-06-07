@@ -29,10 +29,7 @@ A lot of big data, data science, machine learning (call them what you want) are 
 
 Because we will use Docker and a realease is coming on Windows and OSX we will see that you don't need to install it on your hard drive.
 
-Programming languages and tools
-*********************************
-
-The languages to work with data that you will see the most right now are Python and R. First, it's important to mention that these 2 languages are powerfull thanks to their very good package management systems and the community that supports all of these open source tools. Then, it's worth mentionning that a lot of packages are wrappers around C, C++, fortran or other languages softwares. It's an important point because these Python packages have to access compiled code or compile the code before they can be used.
+ems and the community that supports all of these open source tools. Then, it's worth mentionning that a lot of packages are wrappers around C, C++, fortran or other languages softwares. It's an important point because these Python packages have to access compiled code or compile the code before they can be used.
 
 This requirement leads to a lot of troubles with dependencies and compilers. 
 
